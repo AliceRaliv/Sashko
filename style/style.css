@@ -1,0 +1,117 @@
+.container {
+margin: 0 auto;
+width: 100%;
+max-width: 1920px;
+  
+} 
+body {  
+  display: grid;
+  justify-content: center;
+  background-color: #FFFfff;
+}
+
+main{
+  max-width: 1400px;
+}
+h6 {
+    text-align: right;
+    margin: 0;
+    padding: 1.5em 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 24px
+}
+    h2 {
+    text-align: center;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 48px;  
+  }
+  img.main {
+    display: block;
+    border: 0;
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+img.image {
+    display: block;
+    border: 0;
+    height: auto;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+.par {
+      display: grid;
+      grid-template-columns:repeat(3, 1fr);
+      justify-content: center;
+}
+p {
+      text-align: center;
+      margin: 0px
+    }
+
+p.comment{
+    text-align: center;
+    font-size: 15px;
+
+}
+button {
+  
+  display: block;
+  padding: 22px 114px; /* минимальный размер кнопки */
+  font-size: 48px; /* размер текста */
+  cursor: pointer; /* Курсор*/
+  text-align: center; /* ориентация текста в кнопке */
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+  color: #fff;
+  background-color: #1C1C1C; /* цвет верхней части кнопки */
+  border: none;
+  border-radius: 2px; /* радиус углов кнопки */
+  
+}
+}
+
+}
+body,
+input,
+select,
+textarea {
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+  }
+
+.wrapper {
+  display: grid;
+  grid-template-columns:repeat(2, 1fr);
+  padding-top: 3em;
+  justify-content: center;
+  
+  
+}
+.AXE {
+  display: grid;
+  grid-template-columns: 1fr 2fr ;
+  grid-template-rows: auto;
+  padding-top: 0em;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+}
+  
+.shop {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: center;
+      width: 100%;
+    
+}
+.request {
+  display: grid;
+justify-content: center;
+}

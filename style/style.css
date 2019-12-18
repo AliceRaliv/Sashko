@@ -1,39 +1,87 @@
 
+div{
+  //border: solid 1px red;
+}
 .container {
     height: 100%;
     display: grid;
-    grid-gap: 3px;
+    grid-gap: 0px;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 120px auto 120px;
+    grid-template-rows: 120px 29px 700px 50px 120px;
     grid-template-areas: 
-        ". hl hl hl hl . . . h h h ."
-        ". m m m m c c c c c c ."
-        ". m m m m f f f f f f .";
+        ". . hl hl hl . h h h h h"
+        ". . . . . c c c c c . "  
+        ". m m m m c c c c c ."
+        ". m m m m . . . . . ."
+        ". m m m m f f f f f .";
 }
 
 .header {
     grid-area: h;
     text-align: right;
     font-size: 24px;
-
+    padding-bottom: 50px;
+    padding-left: 15px;
         }
+
 .header-logo {
-    grid-area: hl
+    grid-area: hl;
+    padding-bottom: 60px;
+        padding-right: 60px;
     }
+
 
 .menu {
     grid-area: m;
+    padding-left: 50px;
 }
 
 .content {
+border-top: solid 1px black;
     grid-area: c;
     
 }
+
+span.lable{
+font-size: 47px;
+}
+span.red{
+color: red;
+}
+
 .text {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around;
+}
+
+.text1{
+  position: relative;
+  margin-left: 100px;
+  float:left;
+  text-align: center;
+}
+
+.text2{
+  position: relative;
+  margin-left: 100px;
+  float:left;
+  text-align: center;
+}
+
+.text3{
+  position: relative;
+  margin-left: 100px;
+  float:left;
+  text-align: center;
+}
+
+.text4{
+  position: relative;
+  margin-left: 122px;
+  float:left;
+  text-align: center;
+}
+
+.img{ 
+  padding-top 40px; 
 }
 
 .footer {
@@ -42,10 +90,19 @@
 img.main {
     display: block;
     border: 0;
-    width: 60%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     }
+
+img.right {
+    display: block;
+    border: 0;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
 img.logo {
     display: block;
     border: 0;
@@ -56,7 +113,6 @@ img.logo {
     }
 .main-text
 {
-  text-align: right;
   font-size: 24px;
   
 }
@@ -66,7 +122,40 @@ img.logo {
   font-size: 18px;
   
 }
-button {
+
+.button{
+  margin-top: 20px;
+margin-left: 38px;
+}
+
+a.button{
+
+text-decoration: none;
+font-size: 48px;
+color: #FFFFFF;
+background: #000000;
+padding-bottom: 25px;
+padding-right: 120px;
+padding-left: 120px;
+padding-top: 25px;
+white-space: nowrap;
+}
+
+a.button:hover{
+
+text-decoration: none;
+font-size: 48px;
+color: grey;
+background: #000000;
+padding-bottom: 25px;
+padding-right: 120px;
+padding-left: 120px;
+padding-top: 25px;
+white-space: nowrap;
+}
+
+/*
+a.button {
   
   display: block;
   padding: 22px 114px; 
@@ -80,6 +169,7 @@ button {
   border-radius: 2px;
 
 }
+<<<<<<< HEAD
 
 
 

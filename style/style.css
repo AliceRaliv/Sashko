@@ -78,8 +78,7 @@ button {
   background-color: black;
   border: none;
   border-radius: 2px;
-  margin-left: auto;
-  margin-right: auto;
+
 }
 
 
@@ -202,4 +201,4 @@ textarea {
   display: grid;
 justify-content: center;
 }
-*/*/
+*/

@@ -17,7 +17,7 @@ html, body {
   margin: 0px;
 
 }
-/*.content > div:nth-child(1n) {
+.content > div:nth-child(1n) {
   background-color: #96ceb4;  
 }
 
@@ -35,4 +35,4 @@ html, body {
 .content > div:nth-child(5n) {
       background-color: green;
 }
-*/
+

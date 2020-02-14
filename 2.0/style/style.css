@@ -66,6 +66,15 @@ header{
 	white-space: pre-wrap;
 }
 
+@media(max-width: 977px){
+
+.slogan{
+
+	font-size: 14px;
+
+}
+}
+
 .main-page{
 	grid-column: 1/-1;
 	//background-color: #FFFADD;
@@ -73,6 +82,7 @@ header{
 	grid-template-columns: 4fr 2fr;
 	grid-template-rows: auto;
 }
+
 
 .info{
 	display: grid;
@@ -86,12 +96,77 @@ header{
 	//background-color: #C6D8FF;
 	grid-column: 1/-1;
 	font-size: 46px;
-	padding-top: 50px;
+	padding-top: 7%;
 	justify-self: center;
 }
 
+@media (max-width: 1647px)
+{
+
+.title{
+
+	font-size: 36px;
+	padding-top: 10%;
+
+}
+
+.main-page{
+	grid-template-columns: 3fr 2fr;
+	}
+} 
+
+
+@media (max-width: 1440px)
+{
+
+.title{
+
+	font-size: 29px;
+	padding-top: 9%;
+
+
+}
+
+.main-page{
+	grid-template-columns: 3fr 2fr;
+}
+
+
+}
+
+@media (max-width: 1155px){
+
+.title{	font-size: 24px;	padding-top: 9%;}
+
+}
+
+@media (max-width: 977px)
+{
+
+.title{
+
+	font-size: 18px;
+
+
+}
+
+.main-page{
+
+	//grid-template-columns: 1fr 1fr;
+}
+
+
+} 
+
+
 .icon-text{
 	font-size: 18px;
+}
+
+@media(max-width: 977px){
+
+.icon-text{font-size: 12px;}
+
 }
 
 .icons{
@@ -262,6 +337,22 @@ span.button{
 	white-space: nowrap;
 }
 
+@media(max-width: 1440px){
+
+	span.button{
+
+	font-size: 28px;
+}
+}
+
+@media(max-width: 977px){
+
+	span.button{
+
+	font-size: 20px;
+}
+}
+
 .button:hover{
 	color: grey;
 }
@@ -276,6 +367,32 @@ span.button{
 
 
 }
+
+@media (max-width: 1647px)
+{
+
+.why{
+
+	font-size: 36px;
+
+}
+
+} 
+
+
+@media (max-width: 1440px)
+{
+
+.why{
+
+	font-size: 29px;
+
+
+}
+
+}
+
+
 
 .reasons{
 
@@ -300,14 +417,16 @@ span.button{
 	//justify-self: center;
 	justify-self: start;
 	padding-top: 10%;
+	padding-bottom: 10%;
 
 }
 
 
 
 .reason-title{
-	padding-top: 10%;
 	font-size: 30px;
+	justify-self: start;
+	align-self:start;
 }
 
 
@@ -322,7 +441,14 @@ span.button{
 	//text-align: center;
 }
 
-.footer{
+@media (max-width: 977px)
+{
+	.reason-text{font-size: 18px;}
+	.reason-title{font-size: 24px;}
+}
+
+
+footer{
 	grid-column: 1/-1;
 	margin-top: 9%;
 	border-top: 1px solid black; 
@@ -349,6 +475,136 @@ span.button{
 
 }
 
+@media (max-width: 550px){
+
+container{
+
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-column: 1/-1;
+ 
+}
+
+	.main-page{
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+}
+
+header{
+
+	grid-template-columns: 1fr 1fr;
+
+}
+
+.logo{
+	grid-column: 1/2;
+	justify-self: stretch;
+	padding-left: 5%;
+	align-self: center;
+
+}
+
+.img-logo{
+	width: 50%;
+
+}
+
+.slogan{
+	grid-column: 2/-1;
+	justify-self: end;
+	font-size: 16px;
+	text-align: right;
+	padding-top: 1px;
+	padding-right: 5%;
+	border-bottom: none; 
+}
+
+.main-img{
+	display: none;
+}
+
+.why{
+
+	font-size: 25px;
+	padding-top: 10%;
+
+
+}
+
+.reasons{
+
+	grid-column: 1/-1;
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-content: center;
+
+}
+
+.reason-div{
+
+	padding: 7%;
+	display: grid;
+	grid-template-rows: repeat(3, auto);
+
+}
+
+
+
+.reason-img{
+	//justify-self: center;
+	justify-self: start;
+	padding-top: 10%;
+	padding-bottom: 10%;
+
+}
+
+
+
+.reason-title{
+	font-size: 25px;
+	justify-self: start;
+	align-self:start;
+}
+
+
+
+.reason-text{
+
+
+	padding-top: 25px;
+	font-size: 16px;
+	align-self:start;
+	justify-self: start;
+	//text-align: center;
+}
+
+.footer-subscribe{
+	padding-top: 10%;
+	padding-left: 3%;
+	font-size: 25px;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+}
+
+.subscr{
+	padding-top: 10%;
+	padding-left: 3%;
+	cursor:pointer;
+	font-size: 19px;
+}
+
+footer{
+	grid-column: 1/-1;
+	margin-top: 9%;
+	border-top: 1px solid black; 
+	display: grid;
+	grid-template-columns: 1fr;
+}
+.footer-image{
+	padding-top: 10%;
+}
+}
 
 
 
@@ -370,96 +626,6 @@ span.button{
 
 //медиазапросы
 
-@media (max-width: 1648px)
-{
-
-.title{
-
-	font-size: 38px;
-	padding-top: 30px;
-
-}
-
-.main-page{
-	grid-template-columns: 3fr 2fr;
-}
-
-} //конец 1648
 
 
-@media (max-width: 1360px)
-{
-
-.title{
-
-	font-size: 30px;
-
-
-}
-
-.main-page{
-	grid-template-columns: 3fr 2fr;
-}
-
-
-.icon-text{
-	font-size: 14px;
-}
-
-.why{
-
-	font-size: 30px;
-
-}
-
-} //конец 1360
-
-@media (max-width: 767px)
-{
-
-.title{
-
-	font-size: 24px;
-
-
-}
-
-.main-page{
-
-	grid-template-columns: 1fr 1fr;
-}
-
-.icon-text{
-	font-size: 10px;
-}
-
-} //конец 767
-
-
-/*
-a.button{
-
-	text-decoration: none;
-	font-size: 48px;
-	color: #FFFFFF;
-	background: #000000;
-	padding-bottom: 5%;
-	padding-right: 22%;
-	padding-left: 22%;
-	padding-top: 5%;
-	white-space: nowrap;
-}
-/*
-a.button:hover{
-
-	text-decoration: none;
-	font-size: 48px;
-	color: grey;
-	background: #000000;
-	padding-bottom: 25px;
-	padding-right: 120px;
-	padding-left: 120px;
-	padding-top: 25px;
-	white-space: nowrap;
-}
 

@@ -462,14 +462,22 @@ footer {
     .button{
         line-height: normal;
     }
+
+    .reasons{
+        grid-template-columns: 1fr;
+    }
+    .reason-div{
+        padding-top: 1%;
+        padding-bottom: 6%;
+    }
 }
 
 /*977*/
 @media (max-width: 977px) {
 
     .slogan {
-        font-size: 14px;
-        padding-top: 7%;
+        font-size: 18px;
+        padding-top: 3%;
     }
 
     .title {

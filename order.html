@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
   <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/order.css">
 </head>
 <body>
     <div class="main">
@@ -19,11 +20,60 @@
             <div class="main-page">
                 <div class="info">
 
-                    <div class="title">Количество персонажей</div>
+                    <div class="title">Размер изображения</div>
                         
                         <div class="select">
+                            <div class="item" style="background-color: #dfdfdf">
+                                <div class="item-img">
+                                    <img style="background-color: #dfdfdf" class="item" src="style/img/order/example.png">
+                                </div>
+                                <div class="item-name">Малый</div>
+                                <div class="item-description">до 500px по большей стороне</div>
+                            </div>
+
+                            <div class="item">
+                                <div class="item-img">
+                                    <img class="item" src="style/img/order/example.png">
+                                </div>
+                                <div class="item-name">Средний</div>
+                                <div class="item-description">от 500 до 1000 px по большей стороне</div>
+                            </div>
+
+                            <div class="item">
+                                <div class="item-img">
+                                    <img class="item" src="style/img/order/example.png">
+                                </div>
+                                <div class="item-name">Большой</div>
+                                <div class="item-description">от 1000 px по большей стороне</div>
+                            </div>
+
+                            <div class="comment">
+                                <div class="comment-title">Поле для уточнения</div>
+                                <div class="comment-description">Напиши точный размер, если нужна иллюстрация определенного размера
+                                 </div>
+                                 <div class="comment-textarea">
+                                    <textarea class="txt-comment" placeholder="Уточнять здесь :)"></textarea>
+                                </div>                                
+                            </div>
+
+                            <div class="button-back">
+                                <span class="button-back-span">Назад</span>
+                            </div>
+
+                            <div class="button-ok">
+                                <span class="button-ok-span">Далее</span>
+                            </div>
+
+                            <div class="result">
+                                <div class="result-text">Ориентировочная стоимость: </div>
+                                <div class="result-cost">1000 р.</div>
+                            </div>
+
+
 
                         </div>
+
+
 
 
 

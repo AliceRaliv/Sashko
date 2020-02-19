@@ -6,6 +6,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/order.css">
+  <script src="order.js"></script>
 </head>
 <body>
     <div class="main">
@@ -18,34 +19,38 @@
             </header>
 
             <div class="main-page">
-                <div class="info">
-
-                    <div class="title">Размер изображения</div>
-                        
+<!--Первый вопрос формы-->
+                <div class="info" id="page1">
+                    <div class="title">Размер изображения</div>                        
                         <div class="select">
-                            <div class="item" style="background-color: #dfdfdf">
+
+                            <input style="display:none" type="radio" id="selectsize1" name="size" value="small" checked>
+                            <input style="display:none" type="radio" id="selectsize2" name="size" value="middle">
+                            <input style="display:none" type="radio" id="selectsize3" name="size" value="big">
+
+                            <label for="selectsize1" id="size1" class="item" onclick="item_choose('size1')">
                                 <div class="item-img">
-                                    <img style="background-color: #dfdfdf" class="item" src="style/img/order/example.png">
+                                    <img class="item" src="style/img/order/example.png">
                                 </div>
                                 <div class="item-name">Малый</div>
                                 <div class="item-description">до 500px по большей стороне</div>
-                            </div>
+                            </label>
 
-                            <div class="item">
+                            <label for="selectsize2" id="size2" class="item" onclick="item_choose('size2')">
                                 <div class="item-img">
                                     <img class="item" src="style/img/order/example.png">
                                 </div>
                                 <div class="item-name">Средний</div>
                                 <div class="item-description">от 500 до 1000 px по большей стороне</div>
-                            </div>
+                            </label>
 
-                            <div class="item">
+                            <label for="selectsize3" id="size3" class="item" onclick="item_choose('size3')">
                                 <div class="item-img">
                                     <img class="item" src="style/img/order/example.png">
                                 </div>
                                 <div class="item-name">Большой</div>
                                 <div class="item-description">от 1000 px по большей стороне</div>
-                            </div>
+                            </label>
 
                             <div class="comment">
                                 <div class="comment-title">Поле для уточнения</div>
@@ -56,11 +61,11 @@
                                 </div>                                
                             </div>
 
-                            <div class="button-back">
+                            <div class="button-back" onclick="window.location.href='index.html'">
                                 <span class="button-back-span">Назад</span>
                             </div>
 
-                            <div class="button-ok">
+                            <div class="button-ok" onclick="switch_page('page2')">
                                 <span class="button-ok-span">Далее</span>
                             </div>
 
@@ -68,16 +73,79 @@
                                 <div class="result-text">Ориентировочная стоимость: </div>
                                 <div class="result-cost">1000 р.</div>
                             </div>
-
-
-
                         </div>
+                    </div>
+<!--Второй вопрос-->
+                <div class="info" id="page2" style='display:none;'>
+                    <div class="title">Сложность арта</div>
+                        
+                        <div class="select">
 
+                            <input style="display:none" type="radio" id="selectstage1" name="stage" value="sketch" checked>
+                            <input style="display:none" type="radio" id="selectstage2" name="stage" value="line">
+                            <input style="display:none" type="radio" id="selectstage3" name="stage" value="monochrome">
+                            <input style="display:none" type="radio" id="selectstage4" name="stage" value="color">
+                            <input style="display:none" type="radio" id="selectstage5" name="stage" value="shading">
 
+                            <label for="selectstage" id="stage1" class="item" onclick="item_choose('stage1')">
+                                <div class="item-img">
+                                    <img class="item" src="style/img/order/example.png">
+                                </div>
+                                <div class="item-name">Скетч</div>
+                                <div class="item-description">до 500px по большей стороне</div>
+                            </label>
 
+                            <label for="selectstage2" id="stage2" class="item"  onclick="item_choose('stage2')">
+                                <div class="item-img">
+                                    <img class="item" src="style/img/order/example.png">
+                                </div>
+                                <div class="item-name">Лайн</div>
+                                <div class="item-description">от 500 до 1000 px по большей стороне</div>
+                            </label>
 
+                            <label for="selectstage3" id="stage3" class="item" onclick="item_choose('stage3')">
+                                <div class="item-img">
+                                    <img class="item" src="style/img/order/example.png">
+                                </div>
+                                <div class="item-name">Черно-белый арт</div>
+                                <div class="item-description">от 1000 px по большей стороне</div>
+                            </label>
 
+                            <label for="selectstage4" id="stage4" class="item" onclick="item_choose('stage4')">
+                                <div class="item-img">
+                                    <img class="item" src="style/img/order/example.png">
+                                </div>
+                                <div class="item-name">Цветной арт</div>
+                                <div class="item-description">от 1000 px по большей стороне</div>
+                            </label>
+
+                            <label for="selectstage5" id="stage5" class="item" onclick="item_choose('stage5')">
+                                <div class="item-img">
+                                    <img class="item" src="style/img/order/example.png">
+                                </div>
+                                <div class="item-name">С шейдингом</div>
+                                <div class="item-description">от 1000 px по большей стороне</div>
+                            </label>
+
+                            <div>                             
+                            </div>
+
+                            <div class="button-back">
+                                <span class="button-back-span" onclick="switch_page('page1')">Назад</span>
+                            </div>
+
+                            <div class="button-ok">
+                                <span class="button-ok-span" onclick="switch_page('page3')">Далее</span>
+                            </div>
+
+                            <div class="result">
+                                <div class="result-text">Ориентировочная стоимость: </div>
+                                <div class="result-cost">1000 р.</div>
+                            </div>
+                        </div>                        
                 </div>
+<!--третья-->
+
                 <div class="art"><img class="main-img" src="style/img/main_img.png"></div>
 
             </div>

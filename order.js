@@ -19,11 +19,19 @@ function error_clear(){
 }
 
 function item_choose(item_id){
+  item_clear_selection();
   const item = document.getElementById(item_id);
   item.style.background = "#dfdfdf";
 }
 
+function item_clear_selection(){
+  const items = document.getElementsByClassName("item");
+  for(i = 0; i < items.length; i++){
+    items[i].style.background="#FFFFFF";
+  }
+}
+
 function get_cost(){
   const cost = document.getElementById('cost').value;
-  retur
+  return cost;
 }

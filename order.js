@@ -22,3 +22,8 @@ function item_choose(item_id){
   const item = document.getElementById(item_id);
   item.style.background = "#dfdfdf";
 }
+
+function get_cost(){
+  const cost = document.getElementById('cost').value;
+  retur
+}

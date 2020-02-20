@@ -19,154 +19,138 @@
             </header>
 
             <div class="main-page">
-                <!--Первый вопрос формы-->
-                <div class="info" id="page1">
-                    <div class="title">Размер изображения</div>                        
-                    <div class="select">
+                <div class="info">
+                    <!--Первый вопрос формы-->
+                    <div class="page" id="page1">
+                        <div class="title">Размер изображения</div>
+                        <div class="select">
+                            <input style="display:none" type="radio" id="selectsize1" name="size" value="small">
+                            <input style="display:none" type="radio" id="selectsize2" name="size" value="middle">
+                            <input style="display:none" type="radio" id="selectsize3" name="size" value="big">
 
-                        <input style="display:none" type="radio" id="selectsize1" name="size" value="small" checked>
-                        <input style="display:none" type="radio" id="selectsize2" name="size" value="middle">
-                        <input style="display:none" type="radio" id="selectsize3" name="size" value="big">
+                            <label for="selectsize1" id="size1" class="item" data-for="selectsize1">
+                                <div class="item-img">
+                                    <img class="item" src="style/img/order/example.png">
+                                </div>
+                                <div class="item-name">Малый</div>
+                                <div class="item-description">до 500px по большей стороне</div>
+                            </label>
 
-                        <label for="selectsize1" id="size1" class="item" onclick="item_choose('size1')">
-                            <div class="item-img">
-                                <img class="item" src="style/img/order/example.png">
+                            <label for="selectsize2" id="size2" class="item" data-for="selectsize2">
+                                <div class="item-img">
+                                    <img class="item" src="style/img/order/example.png">
+                                </div>
+                                <div class="item-name">Средний</div>
+                                <div class="item-description">от 500 до 1000 px по большей стороне</div>
+                            </label>
+
+                            <label for="selectsize3" id="size3" class="item" data-for="selectsize3">
+                                <div class="item-img">
+                                    <img class="item" src="style/img/order/example.png">
+                                </div>
+                                <div class="item-name">Большой</div>
+                                <div class="item-description">от 1000 px по большей стороне</div>
+                            </label>
+
+                            <div class="comment">
+                                <div class="comment-title">Поле для уточнения</div>
+                                <div class="comment-description">Напиши точный размер, если нужна иллюстрация определенного размера
+                                </div>
+                                <div class="comment-textarea">
+                                    <textarea class="txt-comment" placeholder="Уточнять здесь :)"></textarea>
+                                </div>                                
                             </div>
-                            <div class="item-name">Малый</div>
-                            <div class="item-description">до 500px по большей стороне</div>
-                        </label>
-
-                        <label for="selectsize2" id="size2" class="item" onclick="item_choose('size2')">
-                            <div class="item-img">
-                                <img class="item" src="style/img/order/example.png">
-                            </div>
-                            <div class="item-name">Средний</div>
-                            <div class="item-description">от 500 до 1000 px по большей стороне</div>
-                        </label>
-
-                        <label for="selectsize3" id="size3" class="item" onclick="item_choose('size3')">
-                            <div class="item-img">
-                                <img class="item" src="style/img/order/example.png">
-                            </div>
-                            <div class="item-name">Большой</div>
-                            <div class="item-description">от 1000 px по большей стороне</div>
-                        </label>
-
-                        <div class="comment">
-                            <div class="comment-title">Поле для уточнения</div>
-                            <div class="comment-description">Напиши точный размер, если нужна иллюстрация определенного размера
-                            </div>
-                            <div class="comment-textarea">
-                                <textarea class="txt-comment" placeholder="Уточнять здесь :)"></textarea>
-                            </div>                                
                         </div>
+                    </div>
+                    <!--Второй вопрос-->
+                    <div class="page" id="page2" style="display: none">
+                        <div class="title">Сложность арта</div>
+                        <div class="select">
+
+                            <input style="display:none" type="radio" id="selectstage1" name="stage" value="sketch">
+                            <input style="display:none" type="radio" id="selectstage2" name="stage" value="line">
+                            <input style="display:none" type="radio" id="selectstage3" name="stage" value="monochrome">
+                            <input style="display:none" type="radio" id="selectstage4" name="stage" value="color">
+                            <input style="display:none" type="radio" id="selectstage5" name="stage" value="shading">
+                            <!--чекбокс для выбора цветного лайна. выбирается опционально, доступен при заказе всего, кроме скетча -->
+                            <input style="display:none" type="checkbox" id="selectcolorline" name="colorline" value="ok">
+
+                            <label for="selectstage1" id="stage1" class="item" data-for="selectstage1">
+                                <div class="item-img">
+                                    <img class="item" src="style/img/order/example.png">
+                                </div>
+                                <div class="item-name">Скетч</div>
+                                <div class="item-description">Набросок</div>
+                            </label>
+
+                            <label for="selectstage2" id="stage2" class="item" data-for="selectstage2">
+                                <div class="item-img">
+                                    <img class="item" src="style/img/order/example.png">
+                                </div>
+                                <div class="item-name">Лайн</div>
+                                <div class="item-description">Обводка</div>
+                            </label>
+
+                            <label for="selectstage3" id="stage3" class="item" data-for="selectstage3">
+                                <div class="item-img">
+                                    <img class="item" src="style/img/order/example.png">
+                                </div>
+                                <div class="item-name">Черно-белый арт</div>
+                                <div class="item-description">Монохромный арт</div>
+                            </label>
+
+                            <label for="selectstage4" id="stage4" class="item" data-for="selectstage4">
+                                <div class="item-img">
+                                    <img class="item" src="style/img/order/example.png">
+                                </div>
+                                <div class="item-name">Цветной арт</div>
+                                <div class="item-description">Арт в цвете. Без теней. Плоский.</div>
+                            </label>
+
+                            <label for="selectstage5" id="stage5" class="item" data-for="selectstage5">
+                                <div class="item-img">
+                                    <img class="item" src="style/img/order/example.png">
+                                </div>
+                                <div class="item-name">С шейдингом</div>
+                                <div class="item-description">С тенями и бликами</div>
+                            </label>
+
+                            <label style="display:none" id="colorline" for="selectcolorline" class="item">
+                                <div class="item-img">
+                                    <img class="item" src="style/img/order/example.png">
+                                </div>
+                                <div class="item-name">Цветной лайн</div>
+                                <div class="item-description">Цвет линии под цвет объекта</div>
+                            </label>
+                        </div>           
+                    </div>             
+                    <!--третья-->
+                    <div class="buttons">
                         <div class="error"><span class="span-error" id="error"></span></div>
-                        <div class="button-back" onclick="window.location.href='index.html'">
+                        <div class="button-back" id="button-back">
                             <span class="button-back-span">Назад</span>
                         </div>
 
-                        <div class="button-ok" onclick="switch_page('page2')">
+                        <div class="button-ok" id="button-ok">
                             <span class="button-ok-span">Далее</span>
-                        </div>
-
-                        <div class="result">
-                            <div class="result-text">Ориентировочная стоимость: </div>
-                            <div class="result-cost">1000 р.</div>
-                        </div>
-                    </div>
-                </div>
-                <!--Второй вопрос-->
-                <div class="info" id="page2" style='display:none;'>
-                    <div class="title">Сложность арта</div>
-
-                    <div class="select">
-
-                        <input style="display:none" type="radio" id="selectstage1" name="stage" value="sketch" checked>
-                        <input style="display:none" type="radio" id="selectstage2" name="stage" value="line">
-                        <input style="display:none" type="radio" id="selectstage3" name="stage" value="monochrome">
-                        <input style="display:none" type="radio" id="selectstage4" name="stage" value="color">
-                        <input style="display:none" type="radio" id="selectstage5" name="stage" value="shading">
-
-                        <!--чекбокс для выбора цветного лайна. выбирается опционально, доступен при заказе всего, кроме скетча -->
-                        <input style="display:none" type="checkbox" id="selectstage6" name="stage" value="colorline">
-
-                        <label for="selectstage" id="stage1" class="item" onclick="item_choose('stage1')">
-                            <div class="item-img">
-                                <img class="item" src="style/img/order/example.png">
-                            </div>
-                            <div class="item-name">Скетч</div>
-                            <div class="item-description">Набросок</div>
-                        </label>
-
-                        <label for="selectstage2" id="stage2" class="item"  onclick="item_choose('stage2')">
-                            <div class="item-img">
-                                <img class="item" src="style/img/order/example.png">
-                            </div>
-                            <div class="item-name">Лайн</div>
-                            <div class="item-description">Обводка</div>
-                        </label>
-
-                        <label for="selectstage3" id="stage3" class="item" onclick="item_choose('stage3')">
-                            <div class="item-img">
-                                <img class="item" src="style/img/order/example.png">
-                            </div>
-                            <div class="item-name">Черно-белый арт</div>
-                            <div class="item-description">Монохромный арт</div>
-                        </label>
-
-                        <label for="selectstage4" id="stage4" class="item" onclick="item_choose('stage4')">
-                            <div class="item-img">
-                                <img class="item" src="style/img/order/example.png">
-                            </div>
-                            <div class="item-name">Цветной арт</div>
-                            <div class="item-description">Арт в цвете. Без теней. Плоский.</div>
-                        </label>
-
-                        <label for="selectstage5" id="stage5" class="item" onclick="item_choose('stage5')">
-                            <div class="item-img">
-                                <img class="item" src="style/img/order/example.png">
-                            </div>
-                            <div class="item-name">С шейдингом</div>
-                            <div class="item-description">С тенями и бликами</div>
-                        </label>
-
-                        <label style="display:none" for="selectstage6" id="stage6" class="item" onclick="item_choose('stage6')">
-                            <div class="item-img">
-                                <img class="item" src="style/img/order/example.png">
-                            </div>
-                            <div class="item-name">Цветной лайн</div>
-                            <div class="item-description">Цвет линии под цвет объекта</div>
-                        </label>
-
-                        <div>                             
-                        </div>
-                        <div class="error"><span class="span-error" id="error"></span></div>
-                        <div class="button-back">
-                            <span class="button-back-span" onclick="back_page('page1')">Назад</span>
-                        </div>
-
-                        <div class="button-ok">
-                            <span class="button-ok-span" onclick="switch_page('page3')">Далее</span>
                         </div>
 
                         <div class="result">
                             <div class="result-text">Ориентировочная стоимость: </div>
                             <div class="result-cost"><span id="cost">0</span> p.</div>
                         </div>
-                    </div>                        
+                    </div>
                 </div>
-                <!--третья-->
-
                 <div class="art"><img class="main-img" src="style/img/main_img.png"></div>
 
             </div>
 
 
             <div class="why">
-               Почему Сашко?
-           </div>
+             Почему Сашко?
+         </div>
 
-           <div class="reasons">
+         <div class="reasons">
             <div class="reason-div">
                 <div class="reason-img">
                     <img class="img-reasons" src="style/img/main/speed.png">
@@ -180,7 +164,7 @@
             </div>
 
             <div class="reason-div">
-               <div class="reason-img">
+             <div class="reason-img">
                 <img class="img-reasons" src="style/img/main/quality.png">
             </div>
             <div class="reason-title">

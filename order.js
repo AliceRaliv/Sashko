@@ -1,98 +1,101 @@
-let is_selected = false;
-let is_checkbox_selected = false;
-
-function switch_page(div_id){
-  if (is_selected == false){
-    error_print();
+(function() {
+  let size = null;
+  let stage = null;
+  let colorline = null;
+  let step = 0;
+  window.onload = function() {
+    changeForm();
+  };
+  function changeForm() {
+    clickChooseSize();
+    clickChooseStage();
+    clickChooseColorLine();
+    button_ok();
+    button_back();
   }
-  else{
-    display_page(div_id);
+  function clickChooseSize() {
+    let el = document.getElementsByName('size');
+    [].forEach.call(el, (value) => {
+      value.addEventListener('change', () => {
+        item_clear_selection();
+        let id = value.id;
+        size = value.value;
+        document.querySelector(`[data-for="${id}"]`).style.background = '#dfdfdf';
+      });
+    });
   }
-}
+  function clickChooseStage() {
+    let el = document.getElementsByName('stage');
+    [].forEach.call(el, (value) => {
+      value.addEventListener('change', () => {
+        item_clear_selection();
+        let id = value.id;
+          if(id == "selectstage1"){
+            hide_colorline();
+            colorline = 'none';
+          }
+          else{
+            display_colorline();
+          }
+        stage = value.value;
+        document.querySelector(`[data-for="${id}"]`).style.background = '#dfdfdf';
+        document.querySelector(`[data-for="${id}"]`).style.zIndex = 1;
+      });
+    });
+  }
+  function clickChooseColorLine() {
+    let checkbox = document.getElementById('selectcolorline');
+      if(checkbox.checked == true){
+        colorline = checkbox.value;
+        document.getElementById('colorline').style.background = '#dfdfdf';
+      }
+      else{
+        colorline = 'none';
+        document.getElementById('colorline').style.background = '#ffffff';
+      }
 
-function back_page(div_id){
-  display_page(div_id);
-}
-
-function display_page(div_id){
-  const divs = document.getElementsByClassName("info");
-  error_clear();
-  for(i = 0; i < divs.length; i++){
-    if(divs[i].id == div_id){
-      divs[i].style.display = 'grid';
-      is_selected = false;
-      continue;
+  }   
+  function display_colorline(){
+    document.getElementById('colorline').style.display = 'block';
+  }   
+  function hide_colorline(){
+    document.getElementById('colorline').style.display = 'none';
+  }   
+  function item_clear_selection(){
+    const items = document.getElementsByClassName("item");
+    for(i = 0; i < items.length; i++){
+      items[i].style.background = "#FFFFFF";
+      items[i].style.zIndex = 0;
     }
-    divs[i].style.display = 'none';
+  }  
+  function button_ok(){
+    let button = document.getElementById('button-ok');
+    button.addEventListener('click', () => {
+      console.log(size);
+      console.log(stage);
+      console.log(colorline);
+      let page = document.getElementsByClassName("page");
+      page[step].style.display = 'none';
+      step++;
+      page[step].style.display = 'grid';
+
+    });
   }
+  function button_back(){
+    let button = document.getElementById('button-back');
+    button.addEventListener('click', () => {
+      let page = document.getElementsByClassName("page");
+      if(step == 0){
+        window.location = 'index.html';
+      }
+      else{
+        page[step].style.display = 'none';
+        step--;
+        page[step].style.display = 'grid';
+      }
+    });
+  }  
 
-}
 
-function error_print(){
-  document.getElementById("error").innerHTML = "Ошибка: Выберите пункт";
-}
 
-function error_clear(){
-  document.getElementById("error").innerHTML = "";
-}
-
-function item_choose(item_id){
-  const item = document.getElementById(item_id);
-
-  if(item_id == "stage6" && is_checkbox_selected == true){
-    item.style.background = "#FFFFFF";
-    is_checkbox_selected = false;
-    return "ok";
-  }
-
-  if(item_id == "stage1"){
-    document.getElementById("selectstage6").checked = false;
-  }
-
-  display_colorline(item_id);
-  error_clear();
-  if (item_id != "stage6"){
-    is_checkbox_selected = false;
-  }
-  else{
-    is_checkbox_selected = true;
-  }
-  if (is_checkbox_selected == false){
-    item_clear_selection();
-  }
-  is_selected = true;
-  item.style.background = "#dfdfdf";
-}
-
-function item_clear_selection(){
-  const items = document.getElementsByClassName("item");
-  for(i = 0; i < items.length; i++){
-    items[i].style.background="#FFFFFF";
-  }
-}
-
-function get_cost(){
-  const cost = document.getElementById('cost').value;
-  return cost;
-}
-
-function is_line(id){
-  if(id == "stage2" || id == "stage3" || id == "stage4" || id == "stage5" || id == "stage6"){
-    return true;
-  }
-
-  else{
-    return false;
-  }
-}
-
-function display_colorline(id){
-  const isline = is_line(id);
-  if (isline == true){
-    document.getElementById('stage6').style.display = 'block';
-  }
-  else{
-    document.getElementById('stage6').style.display = 'none';
-  }
-
-}
+}());

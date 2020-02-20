@@ -1,26 +1,39 @@
 .info {
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 66% 34%;
 }
 
+.page {
+	display: grid;
+    grid-template-rows: 20% 80%;
+}
+
+.select{
+	padding-top: 0%;
+	display:grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 50% 50%;
+	width: 90%;
+}
+
+.buttons{
+	margin-top: 3%;
+	width: 90%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 7% 40% 20%; 
+}
 .title{
 	justify-self: start;
     font-size: 40px;
     padding-top: 4.4%;
-
 }
 
-.select{
-	padding-top: 3%;
-	display:grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: 34.4% 34.4% 3% 14.6% 40px;
-	width: 90%;
-}
 .item{
 	padding: 4%;
 	background-color: #ffffff;
 	border-radius: 19px;
 	width: 55%;
+	height: 97%;
 	margin-bottom: 5%;
 }
 .item-img{

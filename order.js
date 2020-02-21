@@ -10,6 +10,7 @@
   window.onload = function() {
     changeForm();
     buttonClick();
+    count();
   };
 
 //Для изменения формы
@@ -25,7 +26,32 @@
     button_back();
   }
 
-  func
+//Рассчет стоимости арта
+  function count(){
+    count_size();
+    console.log(count_size());
+  }
+
+  function count_size(){
+    let el = document.getElementsByName('size');
+    [].forEach.call(el, (size) => {
+      size.addEventListener('change', () => {
+        switch(size.value){
+          case 'small':
+            return 500;
+            break;
+          case 'middle':
+            return 1000;
+            break;
+          case 'big':
+            return 1500;
+            break;
+          default: return 0;
+
+        }
+      });
+    });
+  }
 
 //Выбор пункта размера изображения, данные записаны в переменную size
   function clickChooseSize() {
@@ -90,6 +116,7 @@
       else{
         colorline = 'none';
         document.getElementById('colorline').style.background = '#ffffff';
+        document.getElementById('colorline').style.zIndex = 0;
       }
     });
   }
@@ -159,6 +186,10 @@
 //Скрыть ошибку
   function error_clear(){
     document.getElementById("error").innerHTML = "";
+  }
+
+  function get_price(){
+
   }
 
 }());

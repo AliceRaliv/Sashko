@@ -6,11 +6,16 @@
   let step = 0;
   let is_checked = false;
 
+  let size_price = 0;
+  let stage_price = 0;
+  let colorline_price = 0;
+  let cost = 0;
+
+
 //При загрузке страницы
   window.onload = function() {
     changeForm();
     buttonClick();
-    count();
   };
 
 //Для изменения формы
@@ -26,31 +31,64 @@
     button_back();
   }
 
-//Рассчет стоимости арта
-  function count(){
-    count_size();
-    console.log(count_size());
+//Присваивание значений
+  function get_cost(){
+    switch(size){
+      case 'small':
+        size_price = 350;
+        break;
+      case 'middle':
+        size_price = 500;
+        break;
+      case 'size':
+        size_price = 750;
+      default:
+        size_price = 0;
+    }
+
+    switch(stage){
+      case 'sketch':
+        stage_price = 50;
+        break;
+      case 'line':
+        stage_price = 200;
+        break;
+      case 'monochrome':
+        stage_price = 400;
+        break;
+      case 'color':
+        stage_price = 500;
+      case 'shading':
+        stage_price = 700;
+      default:
+        stage_price = 0;
+    }
+
+    if(colorline == null){
+      colorline_price = 0;
+    }
+    else {
+      colorline_price = 50;
+    }
   }
 
-  function count_size(){
-    let el = document.getElementsByName('size');
-    [].forEach.call(el, (size) => {
-      size.addEventListener('change', () => {
-        switch(size.value){
-          case 'small':
-            return 500;
-            break;
-          case 'middle':
-            return 1000;
-            break;
-          case 'big':
-            return 1500;
-            break;
-          default: return 0;
+//Рассчет стоимости арта
+  function count(){
+    get_cost();
+    cost = size_price + stage_price + colorline_price;
+    console.log(size_price);
+    console.log(stage_price);
+    console.log(colorline_price);
+    console.log(cost);
+    print_cost();
+  }
 
-        }
-      });
-    });
+// для отображения цены в блоке
+  function print_cost(){
+    let cost_div = document.getElementById('cost');
+    console.log('цена в принте');
+    console.log(cost);
+    cost_div.value = cost;
   }
 
 //Выбор пункта размера изображения, данные записаны в переменную size
@@ -121,24 +159,24 @@
     });
   }
 
-//Отобразить пункт для выбора цветного лайна 
+//Отобразить пункт для выбора цветного лайна
   function display_colorline(){
     document.getElementById('colorline').style.display = 'block';
-  }  
+  }
 
-//Скрыть пункт для выбора цветного лайна 
+//Скрыть пункт для выбора цветного лайна
   function hide_colorline(){
     document.getElementById('colorline').style.display = 'none';
-  }   
+  }
 
-//Для отображения пункта для выбора цветного лайна 
+//Для отображения пункта для выбора цветного лайна
   function item_clear_selection(item){
     const items = document.getElementsByClassName(item);
     for(i = 0; i < items.length; i++){
       items[i].style.background = "#FFFFFF";
       items[i].style.zIndex = 0;
     }
-  }  
+  }
 
 //Переход на следующий вопрос
   function button_ok(){
@@ -152,6 +190,7 @@
         console.log(size_comment);
         console.log(stage);
         console.log(colorline);
+        count(); //считает стоимость
         let page = document.getElementsByClassName("page");
         page[step].style.display = 'none';
         step++;
@@ -170,6 +209,7 @@
         window.location = 'index.html';
       }
       else{
+        count(); //считает стоимость
         is_checked = true;
         page[step].style.display = 'none';
         step--;
@@ -186,10 +226,6 @@
 //Скрыть ошибку
   function error_clear(){
     document.getElementById("error").innerHTML = "";
-  }
-
-  function get_price(){
-
   }
 
 }());

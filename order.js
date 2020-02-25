@@ -40,8 +40,9 @@
       case 'middle':
         size_price = 500;
         break;
-      case 'size':
+      case 'big':
         size_price = 750;
+        break;
       default:
         size_price = 0;
     }
@@ -58,8 +59,10 @@
         break;
       case 'color':
         stage_price = 500;
+        break;
       case 'shading':
         stage_price = 700;
+        break;
       default:
         stage_price = 0;
     }
@@ -88,7 +91,7 @@
     let cost_div = document.getElementById('cost');
     console.log('цена в принте');
     console.log(cost);
-    cost_div.value = cost;
+    cost_div.innerHTML = cost;
   }
 
 //Выбор пункта размера изображения, данные записаны в переменную size

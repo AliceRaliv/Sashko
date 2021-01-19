@@ -21,7 +21,7 @@ container {
     font-family: 'Roboto';
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: minmax(4%, auto);
+    grid-template-rows: minmax(2%, auto);
 /*/ / background-color: #FED6BC;*/
 
 }
@@ -67,6 +67,10 @@ header {
 .howto{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.howto-title{
+  display:none;
 }
 
 .howto-icon{
@@ -125,8 +129,9 @@ header {
   /*/ / background-color: #DEF7FE;*/
     display: grid;
     grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 0.5fr;
     font-weight: 300;
-    height: 50%;
+    height: 100%;
   }
 
   .header-img {
@@ -158,6 +163,12 @@ header {
   .howto{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .howto-title{
+    display:block;
+    font-size: 24px;
+    grid-column: 1/-1;
   }
 
   .howto-icon{
